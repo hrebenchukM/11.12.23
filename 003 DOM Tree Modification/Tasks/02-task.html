@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+
+    <style>
+        div {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <p>Рабочие дни</p>
+    <div id="workdays"></div>
+
+    <p>Выходные дни</p>
+    <div id="weekends"></div>
+    <script>
+       /*
+           // создание узлов
+        let divElement = document.createElement("div");         // создание HTML элемента <div></div>
+        let divText = document.createTextNode("Hello world");   // создание текстового узла "Hello world"
+
+        // созданные узлы не будут видимы пользователю, пока не станут частью DOM, который в данный момент отображает страница.
+
+        // добавление созданных узлов на страницу
+        divElement.append(divText);       // помещаем текстовый узел в HTML элемент. Метод append добавляет узел как последний дочерний узел.
+        document.body.append(divElement); // добавляем HTML элемент (в котором находится текстовый узел) в конец документа.
+
+        // альтернативный вариант с использованием более раннего API
+        // divElement.appendChild(divText);      
+        // document.body.appendChild(divElement);   
+        
+        Задание:
+        Используя параграфы, выведите все рабочие дни недели в div, который находится после фразы "Рабочие дни", 
+		выведите все выходные дни недели после фразы "Выходные дни".
+        Можно внести в разметку соответствующие изменения, чтобы упростить задачу поиска необходимых div. 
+        Параграфы создавайте с помощью перебора массива days. В параграф помещайте значение свойства name.
+        */
+
+        let days = [{ name: "Sunday", isWorkDay: false },
+        { name: "Monday", isWorkDay: true },
+        { name: "Tuesday", isWorkDay: true },
+        { name: "Wednesday", isWorkDay: true },
+        { name: "Thursday", isWorkDay: true },
+        { name: "Friday", isWorkDay: true },
+        { name: "Saturday", isWorkDay: false }];
+
+        for (let i = 0; i < days.length; i++) {
+            let paragraph = document.createElement("p");
+            paragraph.textContent = days[i].name;
+
+            if (days[i].isWorkDay) {
+                document.getElementById("workdays").appendChild(paragraph);
+            } else {
+                document.getElementById("weekends").appendChild(paragraph);
+            }
+        }
+    </script>
+</body>
+
+</html>

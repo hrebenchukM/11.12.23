@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+
+<body>
+    <div id="output">
+
+    </div>
+
+    <script>
+         /* // создание узлов
+         let divElement = document.createElement("div");         // создание HTML элемента <div></div>
+        let divText = document.createTextNode("Hello world");   // создание текстового узла "Hello world"
+
+        // созданные узлы не будут видимы пользователю, пока не станут частью DOM, который в данный момент отображает страница.
+ 
+        // добавление созданных узлов на страницу
+        divElement.append(divText);       // помещаем текстовый узел в HTML элемент. Метод append добавляет узел как последний дочерний узел.
+        document.body.append(divElement); // добавляем HTML элемент (в котором находится текстовый узел) в конец документа.
+
+        // альтернативный вариант с использованием более раннего API
+        // divElement.appendChild(divText);      
+        // document.body.appendChild(divElement); */
+        /*
+        Задание:
+        Создайте параграфы под каждый элемент массива days, значения элементов массива должны быть добавлены как текст в параграфе.
+        Разместите все созданные параграфы в div с id output
+        */
+       
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+      
+        let outputDiv = document.getElementById("output");
+
+        for (let i = 0; i < days.length; i++) {
+            let paragraph = document.createElement("p"); 
+            paragraph.textContent = days[i];
+            outputDiv.appendChild(paragraph); 
+        }
+    </script>
+</body>
+
+</html>
